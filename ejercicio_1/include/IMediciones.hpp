@@ -4,9 +4,10 @@ class IMedicionaes{
     public:
         //método virtual que deben aplicar las clases
         //se pasa por referencia un objeto ofstream
-        virtual void serializar( ofstream & salida)  = 0;
+        //debe ser const así no modifica el objeto al serializar
+        virtual void serializar( ofstream & salida) = 0;
         //metodo virtual puro para poder recuperar el tipo
-        virtual void deserealizar(ifstream& entrdada) = 0;
+        virtual void desearilizar(ifstream& entrdada) = 0;
 };
 
 
