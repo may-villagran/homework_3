@@ -1,3 +1,4 @@
+#pragma once
 #include "IMediciones.hpp"
 #include <memory>
 using namespace std;
@@ -23,7 +24,7 @@ public:
     float presion_estatica;
     float presion_dinamica;
 
-    Presion(float p_estatica, float p_dinamica, float tiempo);
+    Presion(float p_estatica = 0, float p_dinamica = 0, float tiempo = 0);
     //fucniones propias de la clase
     void imprimir() override;
     void serializar(ofstream &salida) override;
@@ -37,7 +38,7 @@ public:
     float longitud;
     float altitud;
 
-    Posicion(float latitud, float longitud, float altitud, float tiempo);
+    Posicion(float latitud =0 , float longitud = 0, float altitud = 0, float tiempo = 0);
     //fucniones propias de la clase
     void imprimir() override;
     void serializar(ofstream &salida) override;
