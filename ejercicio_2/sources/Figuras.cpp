@@ -24,9 +24,6 @@ void Circulo::set_centro(Punto centro) {
 void Circulo::set_radio(float r) {
     this->radio = r;
 }
-void Circulo::set_centro(Punto centro) {
-    this->centro = centro;
-}
 
 float Circulo::get_radio(){
     return radio;
@@ -36,19 +33,20 @@ Punto Circulo::get_centro(){
     return centro;
 }
 //___________________CLASE ELIPSE____________________
-Elipse::Elipse(Punto centro, float a, float b) : centro(centro), semieje_mayor(a), semieje_inferior(b) {}
+Elipse::Elipse(Punto centro, float a, float b) : centro(centro), semieje_superior(a), semieje_inferior(b) {}
 
 void Elipse::set_centro(Punto centro) {
     this->centro = centro;
 }
 void Elipse::set_semieje_superior(float a) {
-    this->semieje_mayor = a;
+    this->semieje_superior = a;
 }
 void Elipse::set_semieje_inferior(float b) {
     this->semieje_inferior = b;
+
 }
 float Elipse::get_semieje_superior() {
-    return semieje_mayor;
+    return semieje_superior;
 }
 float Elipse::get_semieje_inferior() {
     return semieje_inferior;
@@ -70,12 +68,14 @@ void Rectangulo::set_ancho(float ancho) {
 void Rectangulo::set_alto(float alto) {
     this->alto = alto;
 }
+
+
+Punto Rectangulo::get_vertice_inferior() {
+    return vertice;
+}
 float Rectangulo::get_ancho() {
     return ancho;
 }
 float Rectangulo::get_alto() {
     return alto;
-}
-Punto Rectangulo::get_vertice_inferior() {
-    return vertice;
 }

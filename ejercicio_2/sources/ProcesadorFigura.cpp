@@ -1,9 +1,4 @@
 #include "../include/ProcesadorFigura.hpp"
-//caso general, la clase Punto también entra aca, ya que no tiene área
-template <typename T>
-float ProcesadorFigura<T>::calcular_area(T figura){
-    return 0;
-}
 
 //especialización para el rectangulo
 template<>

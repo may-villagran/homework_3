@@ -1,9 +1,17 @@
 #include "Figuras.hpp"
 
+// Definición general de la template dentro del header
 template <typename T>
 class ProcesadorFigura {
 public:
-    float calcular_area(T figura);
+    /*
+    El caso generaldebe estar en el header, ya que no se puede definir en el cpp
+    Sino tengo un error de undefinend reference
+    */
+    static float calcular_area(T figura) {
+        (void)figura; // Evita warning de parámetro no usado
+        return 0;
+    }
 };
 
 // Especialización para Rectangulo
