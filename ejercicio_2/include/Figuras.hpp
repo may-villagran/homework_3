@@ -20,12 +20,11 @@ private:
     float radio;
 
 public:
-    Circulo(float x = 0, float y = 0, float r = 0);
+    Circulo(Punto centro,  float r = 0);
     void set_centro(Punto centro);
     void set_radio(float r);
 
-    float get_coordenada_x();
-    float get_coordenada_y();
+    Punto get_centro();
     float get_radio();
 };
 
@@ -34,11 +33,11 @@ class Elipse
 
 private:
     Punto centro;
-    float semieje_mayor;
+    float semieje_superior;
     float semieje_inferior;
 
 public:
-    Elipse(float x = 0, float y = 0, float a = 1, float b = 1);
+    Elipse(Punto centro, float a = 1, float b = 1);
     void set_centro(Punto centro);
     void set_semieje_superior(float a);
     void set_semieje_inferior(float b);
