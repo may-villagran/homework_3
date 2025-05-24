@@ -6,10 +6,10 @@ MedicionBase::MedicionBase(float tiempo)
 {
     tiempo_medicion_ptr = make_unique<float>(tiempo);
 }
-
+//constructor de copia
 MedicionBase::MedicionBase(const MedicionBase &original)
 {
-    // cuando hago una
+    // cuando hago una copia, creo un nuevo puntero y copio el valor
     this->tiempo_medicion_ptr = make_unique<float>(*(original.tiempo_medicion_ptr));
 }
 

@@ -1,5 +1,7 @@
 #include "../include/ProcesadorFigura.hpp"
 
+
+
 //especialización para el rectangulo
 template<>
 float ProcesadorFigura<Rectangulo>::calcular_area(Rectangulo figura){

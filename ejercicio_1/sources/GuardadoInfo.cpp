@@ -1,4 +1,6 @@
 #include "../include/GuardadoInfo.hpp"
+
+GuardadoInfo::GuardadoInfo() : posicion(), presion() {};
 GuardadoInfo::GuardadoInfo(const Posicion &posicion, const Presion &presion) : posicion(posicion),
                                                                                presion(presion) {};
 void GuardadoInfo::serializar(ofstream &salida)
