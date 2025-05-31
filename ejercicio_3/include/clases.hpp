@@ -4,6 +4,8 @@
 #include <string>
 #include <type_traits>
 #include <concepts>
+
+
 using namespace std;
 // habilito solo la clase si corresponde a los tipos de valores
 
@@ -19,6 +21,8 @@ public:
 };
 
 using asociacion = pair<string, string>;
+
+//_________________________________Clase 2________________________________________
 class Clase2
 {
 public:

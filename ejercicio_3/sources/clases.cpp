@@ -2,6 +2,7 @@
 #include <type_traits>
 #include <vector>
 #include <iostream>
+#include <sstream>
 
 //_________________________________Clase 1________________________________________
 template <typename T>
@@ -21,11 +22,11 @@ string Clase1<T>::procesar_valores()
         for (int i = 0; i < tam_vec; i++)
         {
             salida += "[";
-            for (int j = 0; j < valores[0].size(); j++)
+            for (int j = 0; j <static_cast<int>(valores[0].size()); j++)
             {
                 salida += to_string(valores[i][j]);
                 // si estoy en  la ulti columna, entoces cierro y salto de lineas
-                salida += (j == valores[0].size() - 1) ? "]" : ", ";
+                salida += (j == static_cast<int>(valores[0].size() - 1)) ? "]" : ", ";
             }
             // si es la ultima fila solo ahce el salto de linea, sino agrega una coma
             salida += (i == tam_vec - 1) ? "\n" : ",\n";
@@ -75,11 +76,13 @@ asociacion Clase2::procesar_clase(Clase1<vector<int>> c1) {
 }
 
 void Clase2::creacion_JSON(const vector<asociacion>& asociaciones) {
-    cout << "{\n";
+    ostringstream json_stream;
+    json_stream << "{\n";
     for (size_t i = 0; i < asociaciones.size(); ++i) {
-        cout << "  \"" << asociaciones[i].first << "\": " << asociaciones[i].second;
-        cout << (i == asociaciones.size() - 1 ? "\n" : ",\n");
+        json_stream << "  \"" << asociaciones[i].first << "\": " << asociaciones[i].second;
+        json_stream << (i == asociaciones.size() - 1 ? "\n" : ",\n");
     }
-    cout << "}\n";
+    json_stream << "}\n";
+    cout<< json_stream.str(); // Imprime el JSON generado
 }
 
